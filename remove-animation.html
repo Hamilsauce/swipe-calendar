@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title></title>
+  <!-- <link rel="stylesheet" href="./style.css" type="text/css" media="all" /> -->
+</head>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Styling with CSS -->
+  <style>
+    .removed {
+      transform: translateX(100vw);
+    }
+
+    #second {
+      transition: transform 1s 0s;
+    }
+
+    .cntnr {
+      overflow-x: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="cntnr">
+    <h2>Geeksforgeeks 1</h2>
+    <h2 id="second">Geeksforgeeks 2</h2>
+    <h2>Geeksforgeeks 3</h2>
+    <button>Remove Second</button>
+  </section>
+  <!-- Funcitonality with JavaScript -->
+  <script>
+    var btn = document.querySelector("button");
+    var secondText = document.querySelector("#second");
+
+    btn.addEventListener("click", () => {
+      secondText.classList.add("removed");
+    });
+    secondText.addEventListener("transitionend", () => {
+      secondText.remove();
+    })
+  </script>
+</body>
+
+</html>
+
+</html>

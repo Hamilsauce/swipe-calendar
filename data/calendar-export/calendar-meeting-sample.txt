@@ -1,0 +1,71 @@
+BEGIN:VEVENT
+DTSTART;TZID=America/Chicago:20210226T163000
+DTEND;TZID=America/Chicago:20210226T170000
+RRULE:FREQ=WEEKLY;WKST=SU;UNTIL=20210430T045959Z;BYDAY=FR
+DTSTAMP:20210929T191742Z
+ORGANIZER;CN=jsocarras@theleaguestock.com:mailto:jsocarras@theleaguestock.c
+ om
+UID:fkklrijpg4h0hcqhqoj3nrj0tg@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=mi
+ ke@qed.cm;X-NUM-GUESTS=0:mailto:mike@qed.cm
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=at
+ urner@theleaguestock.com;X-NUM-GUESTS=0:mailto:aturner@theleaguestock.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=br
+ iankrause@theleaguestock.com;X-NUM-GUESTS=0:mailto:briankrause@theleaguesto
+ ck.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=arturn
+ er20@gmail.com;X-NUM-GUESTS=0:mailto:arturner20@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=DECLINED;CN=boris.
+ geissler@me.com;X-NUM-GUESTS=0:mailto:boris.geissler@me.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=ryanla
+ ndgren@theleaguestock.com;X-NUM-GUESTS=0:mailto:ryanlandgren@theleaguestock
+ .com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=jsocar
+ ras@theleaguestock.com;X-NUM-GUESTS=0:mailto:jsocarras@theleaguestock.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=borisg
+ eissler@theleaguestock.com;X-NUM-GUESTS=0:mailto:borisgeissler@theleaguesto
+ ck.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=nf
+ riedman@theleaguestock.com;X-NUM-GUESTS=0:mailto:nfriedman@theleaguestock.c
+ om
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=DECLINED;CN=ianham
+ ilton@theleaguestock.com;X-NUM-GUESTS=0:mailto:ianhamilton@theleaguestock.c
+ om
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=ni
+ ckfriedman12@gmail.com;X-NUM-GUESTS=0:mailto:nickfriedman12@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=su
+ mitchaudhari@theleaguestock.com;X-NUM-GUESTS=0:mailto:sumitchaudhari@thelea
+ guestock.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=mylesw
+ oerner@theleaguestock.com;X-NUM-GUESTS=0:mailto:myleswoerner@theleaguestock
+ .com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=as
+ af@qed.cm;X-NUM-GUESTS=0:mailto:asaf@qed.cm
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=jo
+ etrattner@theleaguestock.com;X-NUM-GUESTS=0:mailto:joetrattner@theleaguesto
+ ck.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=DECLINED;CN=jacob@
+ theleaguestock.com;X-NUM-GUESTS=0:mailto:jacob@theleaguestock.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=ja
+ cobwilsonhamilton@gmail.com;X-NUM-GUESTS=0:mailto:jacobwilsonhamilton@gmail
+ .com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=pr
+ aj.shah@creospan.com;X-NUM-GUESTS=0:mailto:praj.shah@creospan.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=br
+ ij.shah@creospan.com;X-NUM-GUESTS=0:mailto:brij.shah@creospan.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=Jake H
+ amilton;X-NUM-GUESTS=0:mailto:jacob.w.hamilton@outlook.com
+CREATED:20201023T163700Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nDo not edit this section of the description.\n\nT
+ his event has a video call.\nJoin: https://meet.google.com/bhm-zoan-swg\n(U
+ S) +1 614-664-8093 PIN: 420905524#\nView more phone numbers: https://tel.me
+ et/bhm-zoan-swg?pin=8980467655623&hs=7\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20210712T203057Z
+LOCATION:
+SEQUENCE:2
+STATUS:CONFIRMED
+SUMMARY:Team Demos
+TRANSP:OPAQUE
+END:VEVENT

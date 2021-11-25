@@ -1,0 +1,68 @@
+{
+  "events": [
+    {
+      "id": 0,
+      "title":"title",
+      "description":"description",
+      "time":"4:00 PM",
+      "duration":"duration",
+      "date":"09/27/2021",
+      "organizer":"organizer",
+      "guests": [
+        {
+          "name": "jake",
+          "attending": "attending",
+          "email": "email"
+        }
+      ]
+    },  
+    {
+      "id": 1,
+      "title":"title 1",
+      "description":"description 1",
+      "time":"4:00 PM",
+      "duration":"duration",
+      "date":"09/20/2021",
+      "organizer":"organizer",
+      "guests": [
+        {
+          "name": "jake",
+          "attending": "attending",
+          "email": "email"
+        }
+      ]
+    },  
+    {
+      "id": 2,
+      "title":"title 2",
+      "description":"description 2",
+      "time":"4:00 PM",
+      "duration":"duration",
+      "date":"09/5/2021",
+      "organizer":"organizer",
+      "guests": [
+        {
+          "name": "jake",
+          "attending": "attending",
+          "email": "email"
+        }
+      ]
+    },  
+    {
+      "id": 3,
+      "title":"title 3",
+      "description":"description 3",
+      "time":"4:00 PM",
+      "duration":"duration",
+      "date":"09/14/2021",
+      "organizer":"organizer",
+      "guests": [
+        {
+          "name": "jake",
+          "attending": "attending",
+          "email": "email"
+        }
+      ]
+    }  
+  ]
+}

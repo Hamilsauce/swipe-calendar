@@ -1,0 +1,374 @@
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en" style="--black:#000000; --blackTranslucent40:rgba(0,0,0,0.4); --blackTranslucent10:rgba(0,0,0,0.1); --white:#ffffff; --whiteTranslucent40:rgba(255,255,255,0.4); --whiteTranslucent90:rgba(255,255,255,0.9); --neutralDark:#201f1e; --neutralPrimary:#323130; --neutralPrimaryAlt:#3b3a39; --neutralSecondary:#605e5c; --neutralTertiary:#a19f9d; --neutralTertiaryAlt:#c8c6c4; --neutralQuaternary:#d2d0ce; --neutralQuaternaryAlt:#e1dfdd; --neutralLight:#edebe9; --neutralLighter:#f3f2f1; --neutralLighterAlt:#faf9f8; --redDark:#a4262c; --green20:#0b6a0b; --purple:#5c2d91; --flaggedMessage:#fffdd9; --richUserContentBackground:#fff; --composeNeutralBackground:#fff; --composeNeutralLighterBackground:#f4f4f4; --readingPaneCardBorder:#edebe9; --readingPaneCardFocusBorder:#d0d0d0; --themeDarker:#004578; --themeDark:#005A9E; --themeDarkAlt:#106EBE; --themePrimary:#0078d4; --themeSecondary:#2B88D8; --themeTertiary:#71AFE5; --themeLight:#C7E0F4; --themeLighter:#DEECF9; --themeLighterAlt:#EFF6FC; --headerBackground:#0078d4; --headerBackgroundSearch:#005A9E; --headerBrandText:#FFFFFF; --headerTextIcons:#FFFFFF; --headerSearchBoxBackground:rgba(255,255,255,0.7); --headerSearchBoxIcon:#004578; --headerSearchPlaceholderText:#004578; --headerSearchButtonBackground:#0078d4; --headerSearchButtonBackgroundHover:#004578; --headerSearchButtonIcon:#FFFFFF; --headerSearchFilters:#0078d4; --headerSearchFiltersHover:#004578; --headerButtonsBackground:#0078d4; --headerButtonsBackgroundHover:#005A9E; --headerButtonsBackgroundSearch:#005A9E; --headerButtonsBackgroundSearchHover:#004578; --headerBadgeBackground:#004578; --headerBadgeText:#FFFFFF; --headerSearchIcon:#FFFFFF; --searchBoxBackground:rgba(255,255,255,0.7); --fallback-black:#000000; --fallback-blackTranslucent40:rgba(0,0,0,0.4); --fallback-blackTranslucent10:rgba(0,0,0,0.1); --fallback-white:#ffffff; --fallback-whiteTranslucent40:rgba(255,255,255,0.4); --fallback-whiteTranslucent90:rgba(255,255,255,0.9); --fallback-neutralDark:#201f1e; --fallback-neutralPrimary:#323130; --fallback-neutralPrimaryAlt:#3b3a39; --fallback-neutralSecondary:#605e5c; --fallback-neutralTertiary:#a19f9d; --fallback-neutralTertiaryAlt:#c8c6c4; --fallback-neutralQuaternary:#d2d0ce; --fallback-neutralQuaternaryAlt:#e1dfdd; --fallback-neutralLight:#edebe9; --fallback-neutralLighter:#f3f2f1; --fallback-neutralLighterAlt:#faf9f8; --fallback-redDark:#a4262c; --fallback-green20:#0b6a0b; --fallback-purple:#5c2d91; --fallback-flaggedMessage:#fffdd9; --fallback-richUserContentBackground:#fff; --fallback-composeNeutralBackground:#fff; --fallback-composeNeutralLighterBackground:#f4f4f4; --fallback-readingPaneCardBorder:#edebe9; --fallback-readingPaneCardFocusBorder:#d0d0d0; --fallback-themeDarker:#004578; --fallback-themeDark:#005A9E; --fallback-themeDarkAlt:#106EBE; --fallback-themePrimary:#0078d4; --fallback-themeSecondary:#2B88D8; --fallback-themeTertiary:#71AFE5; --fallback-themeLight:#C7E0F4; --fallback-themeLighter:#DEECF9; --fallback-themeLighterAlt:#EFF6FC; --fallback-headerBackground:#0078d4; --fallback-headerBackgroundSearch:#005A9E; --fallback-headerBrandText:#FFFFFF; --fallback-headerTextIcons:#FFFFFF; --fallback-headerSearchBoxBackground:rgba(255,255,255,0.7); --fallback-headerSearchBoxIcon:#004578; --fallback-headerSearchPlaceholderText:#004578; --fallback-headerSearchButtonBackground:#0078d4; --fallback-headerSearchButtonBackgroundHover:#004578; --fallback-headerSearchButtonIcon:#FFFFFF; --fallback-headerSearchFilters:#0078d4; --fallback-headerSearchFiltersHover:#004578; --fallback-headerButtonsBackground:#0078d4; --fallback-headerButtonsBackgroundHover:#005A9E; --fallback-headerButtonsBackgroundSearch:#005A9E; --fallback-headerButtonsBackgroundSearchHover:#004578; --fallback-headerBadgeBackground:#004578; --fallback-headerBadgeText:#FFFFFF; --fallback-headerSearchIcon:#FFFFFF; --fallback-searchBoxBackground:rgba(255,255,255,0.7);">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="./outlook-calendar.css">
+  <!--* KEEP  calendar*/ -->
+  <style type="text/css" media="all">
+    html {
+      box-sizing: border-box;
+    }
+
+    #app {
+      box-sizing: border-box;
+      height: 100vh;
+      width: 50vh;
+      overflow-x: scroll;
+      overflow-y: hidden;
+    }
+  </style>
+  <style type="text/css">
+  </style>
+</head>
+
+<body class="">
+  <div id="app">
+    <div class="calendar">
+      <div class="calendar-top-label-container" aria-hidden="true">
+        <div class="calendar-top-label" style="position: relative; flex: 1 1 0%;">
+          <time title="Sunday">Sunday</time>
+        </div>
+        <div class="calendar-top-label" style="position: relative; flex: 1 1 0%;">
+          <time title="Monday">Monday</time>
+        </div>
+        <div class="calendar-top-label" style="position: relative; flex: 1 1 0%;">
+          <time title="Tuesday">Tuesday</time>
+        </div>
+        <div class="calendar-top-label" style="position: relative; flex: 1 1 0%;">
+          <time title="Wednesday">Wednesday</time>
+        </div>
+        <div class="calendar-top-label" style="position: relative; flex: 1 1 0%;">
+          <time title="Thursday">Thursday</time>
+        </div>
+        <div class="calendar-top-label" style="position: relative; flex: 1 1 0%;">
+          <time title="Friday">Friday</time>
+        </div>
+        <div class="calendar-top-label" style="position: relative; flex: 1 1 0%;">
+          <time title="Saturday">Saturday</time>
+        </div>
+      </div>
+      <div class="U9275KGdyY0hhBjVGwKic">
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r _2HsKw6f5rP-YuEe75sCOUn">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-08-29" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">Aug 29</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r _2HsKw6f5rP-YuEe75sCOUn">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-08-30" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">30</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r _2HsKw6f5rP-YuEe75sCOUn">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-08-31" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">31</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r _2HsKw6f5rP-YuEe75sCOUn">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-01" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">Sep 1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r _2HsKw6f5rP-YuEe75sCOUn">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-02" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">2</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r _2HsKw6f5rP-YuEe75sCOUn">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-03" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">3</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r _2HsKw6f5rP-YuEe75sCOUn">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-04" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">4</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r _2HsKw6f5rP-YuEe75sCOUn">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-05" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r _2HsKw6f5rP-YuEe75sCOUn">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-06" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">6</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r _2HsKw6f5rP-YuEe75sCOUn">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-07" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">7</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r _2HsKw6f5rP-YuEe75sCOUn">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-08" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">8</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r _3VHKJqEvDQn30bakEWhWmJ _auAzZ3tJZcfgQKnXM5S8">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb" style="color: rgb(0, 90, 158);">
+              <div id="header_2021-09-09" class="_2bXAHpGuuFDjuKGQ9gareW _auAzZ3tJZcfgQKnXM5S8">
+                <span aria-hidden="true">Sep 9</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-10" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">10</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-11" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">11</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-12" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">12</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-13" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">13</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-14" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">14</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-15" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">15</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-16" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">16</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-17" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">17</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-18" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">18</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-19" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">19</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-20" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">20</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-21" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">21</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-22" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">22</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-23" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">23</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-24" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">24</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-25" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">25</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-26" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">26</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-27" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">27</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-28" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">28</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-29" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">29</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-09-30" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">30</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-10-01" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">Oct 1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day-container">
+          <div class="_3OR_pHM_o89XLGyBjlu6r">
+            <div class="_3GG9H6VeBJETQzHRrK7Msb">
+              <div id="header_2021-10-02" class="_2bXAHpGuuFDjuKGQ9gareW">
+                <span aria-hidden="true">2</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
