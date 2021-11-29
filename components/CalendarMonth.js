@@ -8,14 +8,14 @@ const { switchMap, mergeMap, filter, scan, takeWhile, startWith, take, tap, map,
 /*  CalendarMonth  */
 
 export default class {
-  constructor(date, dateService, userData$, clickSubject, calendarBodySelector = '.calendar-body') {
+  constructor(date, dateService, userData$, selectionSubject$, calendarBodySelector = '.calendar-body') {
     this.dateService = new DateService();
     this.date = date;
     this.root = this.getRootEl(calendarBodySelector)
     this.userData;
     this.userData$ = userData$;
     this.userDataSubscription;
-    this.clickSubject = clickSubject //.next(x => console.log('next',x));
+    this.selectionSubject$ = selectionSubject$ //.next(x => console.log('next',x));
 
     this._dayMap = undefined;
     this.dayMap = new Map();
@@ -28,14 +28,14 @@ export default class {
     this._selectedDayElement = null;
     this._selectedDays = null;
     this.swipeClass = null;
-   
-    this.root.addEventListener('day-clicked', this.handleDayClicked.bind(this));
+
     this.instance = this;
     this.dayCounter = 0;
     this.mounted = false;
-    // setInterval(() => {
-    //   console.log('calendarmonth: ' + this.monthName);
-    // }, 2000)
+  }
+  
+  get selectedDays() {
+    return [...this.dayMap].filter((x, i) =>  x[1].isSelected === true);
   }
 
   destroy(swipe) {
@@ -43,7 +43,7 @@ export default class {
 
     setTimeout(() => {
       for (let [dayEl, data] of this.dayMap) {
-        data.clickSubscription.unsubscribe();
+        data.selectionSubscription.unsubscribe();
         this.root.removeChild(dayEl);
         this.dayMap.delete(dayEl);
         ++this.dayCounter;
@@ -55,7 +55,7 @@ export default class {
         delete this.userData$;
         delete this.dateService;
         delete this.userData;
-        delete this.clickSubject;
+        delete this.selectionSubject$;
         delete this.instance;
       }, 0);
     }, 300)
@@ -67,6 +67,7 @@ export default class {
       this.swipeClass = swipe === 'right' ? 'monthChangeRightLeave' : 'monthChangeLeftLeave'
     }
     else this.swipeClass = swipe === 'right' ? 'monthChangeRightEnter' : 'monthChangeLeftEnter'
+    
     this.root.classList.add(this.swipeClass);
     this.mounted = true;
   }
@@ -87,32 +88,25 @@ export default class {
   get selectedDaysMap() { return new Map(this.keyElements.filter(keyEl => this.dayMap.get(keyEl).isSelected).map(keyEl => this.getDay(keyEl))) }
   set selectedDaysMap(newSelectedDay) {}
 
-  get selectedDayElement() { return this._selectedDayElement }
-  set selectedDayElement(newSelectedDay) {
-    const noSelectedDay = this._selectedDayElement === null || undefined;
-    this.setSelectedDays(...newSelectedDay)
+  // get selectedDayElement() { return this._selectedDayElement }
+  // set selectedDayElement(newSelectedDay) {
+  //   const noSelectedDay = this._selectedDayElement === null || undefined;
+  //   this.setSelectedDays(...newSelectedDay)
 
-    if (noSelectedDay) {
-      const sel = newSelectedDay;
-      const selData = this.dayMap.get(sel);
-      selData.isSelected = true
-      this._selectedDayElement = sel
-    } else if (this._selectedDayElement === newSelectedDay) {
-      this.dayMap.get(this.selectedDayElement).isSelected = false;
-      this._selectedDayElement = null;
-    } else {
-      this.dayMap.get(this.selectedDayElement).isSelected = false;
-      this._selectedDayElement = newSelectedDay;
-      this.dayMap.get(this.selectedDayElement).isSelected = true;
-    }
-  }
-
-  setSelectedDays(...selected) {
-    for (let [dayEl, data] of this.dayMap) {
-      data.isSelected = false;
-    }
-    selected.forEach(({ data }) => data.isSelected = true);
-  }
+  //   if (noSelectedDay) {
+  //     const sel = newSelectedDay;
+  //     const selData = this.dayMap.get(sel);
+  //     selData.isSelected = true
+  //     this._selectedDayElement = sel
+  //   } else if (this._selectedDayElement === newSelectedDay) {
+  //     this.dayMap.get(this.selectedDayElement).isSelected = false;
+  //     this._selectedDayElement = null;
+  //   } else {
+  //     this.dayMap.get(this.selectedDayElement).isSelected = false;
+  //     this._selectedDayElement = newSelectedDay;
+  //     this.dayMap.get(this.selectedDayElement).isSelected = true;
+  //   }
+  // }
 
   getDaysByName(name = null) {
     this.setSelectedDays(...this.keyElements
@@ -137,13 +131,13 @@ export default class {
     else console.error('No key element passed to getDay(). CalendarMonth.js');
   }
 
-  handleDayClicked(e) {
-    this.setSelectedDays(this.getDay(e.detail.target))
-    // e.stopPropagation();
-  }
+  // handleDayClicked(e) {
+  //   this.setSelectedDays(this.getDay(e.detail.target))
+  //   // e.stopPropagation();
+  // }
 
   createDay(date, data = null, id, el) {
-    const newDay = new CalendarDay(date, this.dateService, this.clickSubject, id, el);
+    const newDay = new CalendarDay(date, this.dateService, this.selectionSubject$, id, el);
     const dayEl = newDay.render();
 
     return [dayEl, newDay]
@@ -162,24 +156,19 @@ export default class {
   }
 
   mapDays(userData) {
-    let counter = 0;
     this.dayMap.clear();
-    // console.log('mapDays', userData);
 
     for (let i = 0; i < this.daysInMonth; i++) {
-      counter++
-      // console.log('line 140 in month', { counter });
       const dayDate = new Date(this.date.getFullYear(), this.monthNumber, i + 1)
       this.dayMap.set(...this.createDay(new Date(this.date.getFullYear(), this.monthNumber, i + 1), i));
     }
   }
 
   renderDays(swipeDirection = null) {
-
-    // console.log('swipeDirection', swipeDirection)
     while (this.root.firstChild) {
       this.root.removeChild(this.root.firstChild)
     }
+    
     this.mapDays(this.userData || [])
     for (let [dayEl, data] of this.dayMap) {
       if (data.monthNumber !== this.monthNumber) {
@@ -191,6 +180,7 @@ export default class {
         ++this.dayCounter
       }
     }
+    
     this.userDataSubscription = this.userData$.pipe(
       map(data => data),
       tap(data => {

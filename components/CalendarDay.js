@@ -6,11 +6,11 @@ const { switchMap, mergeMap, filter, scan, takeWhile, startWith, tap, map, mapTo
 /*  CalendarDay  */
 
 export default class {
-  constructor(date, dateService, clickSubject$, id, content, inputRoot = undefined) {
+  constructor(date, dateService, selectionSubject$$, id, content, inputRoot = undefined) {
     this._userData = [];
 
     this.dateService = dateService;
-    this.id = id;
+    this.id = +date.toISOString().split('T')[0].replace(/-/g, '');
     this.date = date;
     this.isRendered = false;
     this.dateString = this.date.toDateString();
@@ -30,31 +30,53 @@ export default class {
       }, [], '');
     this.root.addEventListener('click', this.handleClicked.bind(this))
 
-    
-    this.clickSubject = clickSubject$
-    this.clickSubscription = this.clickSubject.subscribe(clickEvent => {
-      // console.log('clickEvent',clickEvent.currentTarget === this.root);
-      // console.log('clickEvent',clickEvent.target.parentElement === this.root);
-    });
-    // this.clickSubject.pipe(
-    //   // tap(x => console.log('this.clickSubject in day', x)),
+    // console.log(this);
+    this.selectionSubject$ = selectionSubject$$
+    this.selectionSubscription =
+      merge(
+        this.selectionSubject$.pipe(
+          // tap(x => console.log('selected', x)),
+          filter(clickEvent => typeof clickEvent === 'string' ? this.dayName === clickEvent : clickEvent.target.parentElement === this.root),
+          tap(x => this.isSelected = true),
+          // tap(x => console.log('selected', x)),
+        ),
+        this.selectionSubject$.pipe(
+          filter(clickEvent => typeof clickEvent === 'string' ? this.dayName !== clickEvent : clickEvent.target.parentElement !== this.root),
+          tap(x => {
+            if (this.isSelected = true) {
+              this.isSelected = false
+              // } else {
+
+            }
+
+          }),
+          // tap(x => console.log('not selected', x)),
+        ),
+      )
+      .subscribe(clickEvent => {
+        // console.log('clickEvent in subscribe', clickEvent.target.parentElement === this.root);
+      });
+    // this.selectionSubject$.pipe(
+    //   // tap(x => console.log('this.selectionSubject$ in day', x)),
     //   // switchMap(targ => {
     //   filter(e => {
     //     // e.path
     //     return e.targ.classList.contains('calendar-day')
     //   }),
-    //   // tap(x => console.log('this.clickSubject in day', x))
+    //   // tap(x => console.log('this.selectionSubject$ in day', x))
     // ).subscribe()
 
   }
 
   init() {}
 
-  get userData() { return this._userData } set userData(newVal) {
+  get userData() { return this._userData };
+  set userData(newVal) {
     this._userData = [newVal]
     this.render();
   }
-  get isSelected() { return this._isSelected } set isSelected(newVal) {
+  get isSelected() { return this._isSelected };
+  set isSelected(newVal) {
     if (newVal === false) this.root.classList.remove('selected')
     else if (newVal === true) this.root.classList.add('selected')
     this._isSelected = newVal;
@@ -77,6 +99,7 @@ export default class {
   render() {
     this.root.innerHTML = ''
     this.root.innerHTML = this.template();
+    this.isRendered = true;
     return this.root;
   }
 
